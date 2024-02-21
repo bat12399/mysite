@@ -1,0 +1,57 @@
+## 应用服务 WEB 访问端口
+server:
+  port: 8080
+spring:
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/justdoit?serverTimezone=GMT%2B8&useSSL=FALSE&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+  #springboot 整合Swagger
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  # THYMELEAF (ThymeleafAutoConfiguration)
+  thymeleaf:
+    # 开启模板缓存（默认值： true ）
+    cache: false
+    # 检查模板是否存在，然后再呈现
+    check-template: true
+    # 检查模板位置是否正确（默认值 :true ）
+    check-template-location: true
+    # Content-Type 的值（默认值： text/html ）
+    content-type: text/html
+    # 开启MVC Thymeleaf视图解析（默认值： true ）
+    enabled: true
+    # 模板编码
+    encoding: UTF-8
+    # 要被排除在解析之外的视图名称列表，⽤逗号分隔
+    excluded-view-names:
+    # 要运⽤于模板之上的模板模式。另⻅ StandardTemplate-ModeHandlers( 默认值： HTML5)
+    mode: HTML5
+    # 在构建 URL 时添加到视图名称前的前缀（默认值： classpath:/templates/ ）
+    prefix: classpath:/templates/
+    # 在构建 URL 时添加到视图名称后的后缀（默认值： .html ）
+    suffix: .html
+mybatis-plus:
+  # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-location: classpath:mapper/*.xml
+  global-config:
+    db-config:
+      #主键类型 AUTO:"数据库ID自增" INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+      #字段策略 IGNORED:"忽略判断"  NOT_NULL:"非 NULL 判断")  NOT_EMPTY:"非空判断"
+      field-strategy: not_empty
+      #数据库类型
+      db-type: mysql
+  configuration:
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# logback配置
+logging:
+  config: classpath:logback.xml
