@@ -34,6 +34,11 @@ spring:
     prefix: classpath:/templates/
     # 在构建 URL 时添加到视图名称后的后缀（默认值： .html ）
     suffix: .html
+  # Spring Security
+  security:
+    user:
+      name: user
+      password: 123
 mybatis-plus:
   # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
   mapper-location: classpath:mapper/*.xml
@@ -55,3 +60,4 @@ mybatis-plus:
 # logback配置
 logging:
   config: classpath:logback.xml
+
