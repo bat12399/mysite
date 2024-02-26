@@ -16,6 +16,7 @@
         <druid.version>1.2.21</druid.version>
         <commons-io.version>2.15.1</commons-io.version>
         <mybatis-plus.version>3.5.5</mybatis-plus.version>
+        <knife4j.vsersion>4.4.0</knife4j.vsersion>
     </properties>
     <dependencies>
         <dependency>
@@ -77,6 +78,18 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
+        </dependency>
+        <!--  swagger测试      -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+            <version>${knife4j.vsersion}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2 -->
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>2.0.46</version>
         </dependency>
     </dependencies>
     <dependencyManagement>

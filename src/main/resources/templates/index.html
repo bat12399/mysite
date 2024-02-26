@@ -3,14 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/bootstrap-5.3.0/css/bootstrap.min.css}" rel="stylesheet">
     <title>Document</title>
-    <link href="../static/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script th:src="@{bootstrap-5.3.0/js/bootstrap.bundle.js}"></script>
+    <style>
+        .round-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%; /* 将图片展示为圆形 */
+            overflow: hidden; /* 隐藏溢出部分，使图片呈现为圆形 */
+        }
+    </style>
 </head>
-<body>
-    <div>
-        <h1>hello!</h1>
-        <button><a th:href="@{/logout}">登出</a></button>
+<body class="p-5 m-0 border-0 bd-example bd-example-row">
+    <div class="container text-center" style="width: 85%;">
+        <div class="row">
+            <div class="col-9">
+                <div class="row" style="height: 80px">
+                    <div class="ratio ratio-1x1" style="width: 80px; height: 100%">
+                        <img th:src="@{/images/headshot.jpg}" class="img-fluid round-image" alt="headshot">
+<!--                        <iframe th:src="@{/images/headshot.jpg}" title="headshot" allowfullscreen></iframe>-->
+                    </div>
+                    <div class="col-9 text-start p-4">
+                        <p><strong>用户名称</strong></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="text-start p-3">
+                        <p><small>插画/漫画师</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <img th:src="@{/images/Default.jpg}" class="img-fluid" alt="test">
+            </div>
+        </div>
+        <div class="row p-4">
+            <hr />
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav-tabs navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">全部</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">未命名专辑</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">运营插画</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">餐饮品牌</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">ip品牌</a>
+                            </li>
+                        </ul>
+                        <div class="dropdown d-flex">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                作者排序
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success text-nowrap" type="submit">搜索</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="col-2">
+            <div class="ratio" style="--bs-aspect-ratio: 130%;">
+                <button type="button" class="btn btn-outline-secondary">
+                    <img th:src="@{/bootstrap-icons-1.11.3/plus-circle-fill.svg}" class="img-fluid" alt="创建画板"><br>
+                    创建画板
+                </button>
+            </div>
+        </div>
+<!--        <div class="row p-1">-->
+<!--            <ul class="nav nav-tabs">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link active" aria-current="page" href="#">全部</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#">未命名专辑</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#">运营插画</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#">餐饮品牌</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link">ip品牌</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
     </div>
-    <script src="../static/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.min.js" integrity="sha384-/mhDoLbDldZc3qpsJHpLogda//BVZbgYuw6kof4u2FrCedxOtgRZDTHgHUhOCVim" crossorigin="anonymous"></script>
 </body>
 </html>
